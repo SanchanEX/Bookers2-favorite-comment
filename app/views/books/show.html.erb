@@ -30,7 +30,7 @@
           <% else %>
           <td>
             <%= link_to book_favorites_path(@book), method: :post do %>
-              <i class="fa fa-heart-o" aria-hidden="true"></i>
+              <i class="fa fa-heart" aria-hidden="true"></i>
               <%= @book.favorites.count %>
             <% end %>
           </td>
@@ -71,7 +71,7 @@
             <%= f.text_area :comment, class:'form-control input-sm', placeholder:'コメントをここに' %>
           </div>
           <div class="form-group">
-            <%= f.submit class:'btn btn-primary btn-sm pull-right' %>
+            <%= f.submit "送信", class:'btn btn-primary btn-sm pull-right' %>
           </div>
         <% end %>
       </div>
