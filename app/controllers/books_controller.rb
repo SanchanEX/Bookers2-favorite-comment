@@ -8,9 +8,9 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
+    @book = Book.find(params[:id]) #book_commentsのidを見つける
     @book_comment = BookComment.new
-    @book_comments = @book.book_comments
+    @book_comments = @book.book_comments #showのeachに使う
   end
 
   def create

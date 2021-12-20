@@ -1,9 +1,9 @@
 class BookCommentsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user! #ログイン済みユーザーにのみ許可をする
 
   def create
     book = Book.find(params[:book_id])
-    comment = current_user.book_comments.new(book_comment_params)
+    comment = current_user.book_comments.new(book_comment_params) #ネスト
     comment.book_id = book.id
     comment.save
     redirect_back(fallback_location: root_url)
